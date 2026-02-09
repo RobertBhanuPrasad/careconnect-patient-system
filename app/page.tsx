@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex h-screen max-h-screen">
       {/* TODO: OTP Verification */}
       <section className="remove-scrollbar container my-auto">
-        <div className="sub-container max-w-[469px]">
+        <div className="sub-container max-w-[496px]">
           <Image
             src="/assets/icons/logo-full.svg"
             height={1000}
