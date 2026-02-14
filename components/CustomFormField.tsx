@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import { E164Number } from "libphonenumber-js/core";
 import Image from "next/image";
-import ReactDatePicker from "react-datepicker";
 import { Control } from "react-hook-form";
 import PhoneInput from "react-phone-number-input";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import {
     FormControl,
     FormField,
@@ -112,11 +112,11 @@ const RenderInput = ({ field, props }: { field: any; props: CustomProps }) => {
                         src="/assets/icons/calendar.svg"
                         height={24}
                         width={24}
-                        alt="user"
+                        alt="calender"
                         className="ml-2"
                     />
                     <FormControl>
-                        <ReactDatePicker
+                        <DatePicker
                             showTimeSelect={props.showTimeSelect ?? false}
                             selected={field.value}
                             onChange={(date: Date | null) => field.onChange(date)}
