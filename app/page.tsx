@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default async function Home({searchParams}: SearchParamProps) {
   const { admin: _admin } = await searchParams
-  console.log(_admin, "adminbhanu")
+  
   return (
     <div className="flex h-screen max-h-screen">
       {_admin && <PasskeyModal/>}
