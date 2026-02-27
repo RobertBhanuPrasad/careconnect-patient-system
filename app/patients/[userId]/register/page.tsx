@@ -1,10 +1,13 @@
 import RegisterForm from '@/components/forms/RegisterForm'
 import { getUser } from '@/lib/actions/patient.action'
+import * as Sentry from "@sentry/nextjs";
 import Image from 'next/image'
 
 const Register = async (props: SearchParamProps) => {
     const { userId } = await props.params;
     const user = await getUser(userId)
+
+    Sentry.metrics.count('user_view_register', 1, { attributes: { username: user.name } });
     return (
         <div className="flex h-screen max-h-screen">
             <section className="remove-scrollbar container">
