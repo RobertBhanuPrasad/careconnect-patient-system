@@ -67,7 +67,7 @@ const SuccessPage = async ({ params, searchParams }: SearchParamProps) => {
                     New Appointment
                     </Link>
                 </Button>
-                <p className='copyright'>© 2024 CarePluse</p>
+                <p className='copyright'>© 2026 CarePulse</p>
             </div>
         </div>
     )

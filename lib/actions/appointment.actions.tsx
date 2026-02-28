@@ -49,7 +49,7 @@ export const getRecentAppointmentsList = async () => {
             cancelledCount: 0,
         }
 
-        const counts = (appointments.documents as Appointment[]).reduce((acc, appointment) => {
+        const counts = (appointments.documents as unknown as Appointment[]).reduce((acc, appointment) => {
             if(appointment.status === 'scheduled'){
                 acc.scheduledCount += 1;
             }else if(appointment.status === 'pending'){
@@ -86,19 +86,19 @@ export const updateAppointment = async({ appointmentId, userId, appointment, typ
         }
 
         const smsMessage = `Hi, it's CarePulse.
-        ${type === 'schedule' ? `Your appointment has beedn scheduled for ${formatDateTime(appointment.schedule).dateTime} with ${appointment.primaryPhysician}` 
+        ${type === 'schedule' ? `Your appointment has been scheduled for ${formatDateTime(appointment.schedule).dateTime} with ${appointment.primaryPhysician}`
         : `We regret to inform you that your appointment has been cancelled. Reason: ${appointment.cancellationReason}`}
         `
-        await sendSMSNOtification(userId, smsMessage)
+        await sendSMSNotification(userId, smsMessage)
 
         revalidatePath('/admin');
-        return parseStringify(updateAppointment)
+        return parseStringify(updatedAppointment)
     }catch(error) {
         console.log(error)
     }
 }
 
-export const sendSMSNOtification = async (userId: string, content: string) => {
+export const sendSMSNotification = async (userId: string, content: string) => {
     try {
         const message = await messaging.createSMS(
             ID.unique(),

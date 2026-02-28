@@ -20,7 +20,7 @@ export const columns: ColumnDef<Appointment>[] = [
         accessorKey: 'patient',
         header: 'Patient',
         cell: ({row}) => {
-            return <p className="text-14-mediuam">{row.original.patient.name}</p>
+            return <p className="text-14-medium">{row.original.patient.name}</p>
         }
     },
     {

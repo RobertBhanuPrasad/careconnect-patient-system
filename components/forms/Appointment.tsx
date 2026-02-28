@@ -20,7 +20,7 @@ export const AppointmentForm = ({userId, patientId, type, appointment, setOpen}:
     patientId: string | undefined;
     type: "create" | "cancel" | "schedule";
     appointment?: Appointment;
-    setOpen: (open: boolean) => void;
+    setOpen?: (open: boolean) => void;
 }) => {
     
     const router = useRouter();
@@ -84,7 +84,7 @@ export const AppointmentForm = ({userId, patientId, type, appointment, setOpen}:
 
                 const updatedAppointment = await updateAppointment(appointmentToUpdate);
                 if(updatedAppointment) {
-                    setOpen && setOpen(false)
+                    setOpen?.(false)
                     form.reset()
                 }
             }
@@ -126,17 +126,17 @@ export const AppointmentForm = ({userId, patientId, type, appointment, setOpen}:
                             label="Doctor"
                             placeholder="Select a doctor"
                         >
-                            {Doctors.map((docter) => (
-                                <SelectItem key={docter.name} value={docter.name}>
+                            {Doctors.map((doctor) => (
+                                <SelectItem key={doctor.name} value={doctor.name}>
                                     <div className="flex cursor-pointer items-center gap-2">
                                         <Image
-                                            src={docter.image}
+                                            src={doctor.image}
                                             width={32}
                                             height={32}
-                                            alt={docter.name}
+                                            alt={doctor.name}
                                             className="rounded-full border border-dark-500"
                                         />
-                                        <p>{docter.name}</p>
+                                        <p>{doctor.name}</p>
                                     </div>
                                 </SelectItem>
                             ))}

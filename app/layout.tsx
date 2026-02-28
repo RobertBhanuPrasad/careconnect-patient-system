@@ -10,7 +10,7 @@ const fontSans = FontSans({
   variable: "--font-sans"
 })
 export const metadata: Metadata = {
-  title: "Care connect partient-management",
+  title: "Care connect patient-management",
   description: "A health Care Management System",
 };
 

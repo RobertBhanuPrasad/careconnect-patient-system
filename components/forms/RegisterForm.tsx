@@ -189,17 +189,17 @@ export const RegisterForm = ({user }: {user: User}) => {
                     label="Primary Physician"
                     placeholder="Select a physician"
                 >
-                    {Doctors.map((docter) => (
-                        <SelectItem key={docter.name} value={docter.name}> 
+                    {Doctors.map((doctor) => (
+                        <SelectItem key={doctor.name} value={doctor.name}> 
                             <div className="flex cursor-pointer items-center gap-2">
                                 <Image
-                                src={docter.image}
+                                src={doctor.image}
                                 width={32}
                                 height={32}
-                                alt={docter.name}
+                                alt={doctor.name}
                                 className="rounded-full border border-dark-500"
                                 />
-                                <p>{docter.name}</p>
+                                <p>{doctor.name}</p>
                             </div>
                         </SelectItem>
                     ))}
@@ -210,8 +210,8 @@ export const RegisterForm = ({user }: {user: User}) => {
                         fieldType={FormFieldType.INPUT}
                         control={form.control}
                         name="insuranceProvider"
-                        label="Insurance provide"
-                        placeholder="BlureCross BlueShied"
+                        label="Insurance provider"
+                        placeholder="BlueCross BlueShield"
                     />
 
                     <CustomFormField
@@ -229,7 +229,7 @@ export const RegisterForm = ({user }: {user: User}) => {
                         control={form.control}
                         name="allergies"
                         label="Allergies (if any)"
-                        placeholder="Peanuts, Pencillin, Pollen"
+                        placeholder="Peanuts, Penicillin, Pollen"
                     />
 
                     <CustomFormField
@@ -255,7 +255,7 @@ export const RegisterForm = ({user }: {user: User}) => {
                         control={form.control}
                         name="pastMedicalHistory"
                         label="Past medical history"
-                        placeholder="Appecdectomy"
+                        placeholder="Appendectomy"
                     />
                 </div>
 

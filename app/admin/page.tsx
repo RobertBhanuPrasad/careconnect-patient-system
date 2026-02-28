@@ -3,7 +3,6 @@ import StartCard from '@/components/StartCard'
 import { getRecentAppointmentsList } from '@/lib/actions/appointment.actions'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 import {columns} from '@/components/table/columns'
 
 const Admin = async () => {
@@ -22,7 +21,7 @@ const Admin = async () => {
         />
         </Link>
 
-        <p className='text-16-semibol'>Admin Dashboard</p>
+        <p className='text-16-semibold'>Admin Dashboard</p>
       </header>
 
       <main className='admin-main'>

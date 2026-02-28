@@ -2,7 +2,6 @@
 import {
     AlertDialog,
     AlertDialogAction,
-    AlertDialogCancel,
     AlertDialogContent,
     AlertDialogDescription,
     AlertDialogFooter,
@@ -38,9 +37,9 @@ const PasskeyModal = () => {
         setOpen(true)
       }
     }
-  }, [encryptedKey])
+  }, [encryptedKey, pathname])
 
-  const closeModel = () => {
+  const closeModal = () => {
       setOpen(false)
       router.push('/')
     }
@@ -61,13 +60,13 @@ const PasskeyModal = () => {
     <AlertDialog open={open} onOpenChange={setOpen}>
   <AlertDialogContent className="shad-alert-dialog">
     <AlertDialogHeader>
-      <AlertDialogTitle className="flex items-center justify-between">Admin Access Varification
+      <AlertDialogTitle className="flex items-center justify-between">Admin Access Verification
         <Image
         src="/assets/icons/close.svg"
         alt="close"
         width={20}
         height={20}
-        onClick={() => closeModel()}
+        onClick={() => closeModal()}
         className="cursor-pointer"
         />
       </AlertDialogTitle>
